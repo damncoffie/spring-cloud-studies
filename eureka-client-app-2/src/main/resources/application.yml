@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: verb-app
+words: goes,thinks,looks
+server.port: ${PORT:${SERVER_PORT:0}}

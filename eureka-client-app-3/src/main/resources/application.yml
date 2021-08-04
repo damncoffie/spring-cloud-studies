@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: adjective-app
+words: good,bad,ugly
+server.port: ${PORT:${SERVER_PORT:0}}

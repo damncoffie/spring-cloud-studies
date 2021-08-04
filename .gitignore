@@ -1,0 +1,8 @@
+# Project exclude paths
+/config-client-app/target/
+/config-server-app/target/
+/eureka-client-app-1/target/
+/eureka-client-app-2/target/
+/eureka-client-app-3/target/
+/eureka-client-sentence-app/target/
+/eureka-server-app/target/

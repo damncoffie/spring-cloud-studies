@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: subject-app
+words: sonic,tails,knuckles
+server.port: ${PORT:${SERVER_PORT:0}}
