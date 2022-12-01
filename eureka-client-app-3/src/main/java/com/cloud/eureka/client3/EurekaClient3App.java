@@ -1,4 +1,4 @@
-package com.cloud.eureka.client1;
+package com.cloud.eureka.client3;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

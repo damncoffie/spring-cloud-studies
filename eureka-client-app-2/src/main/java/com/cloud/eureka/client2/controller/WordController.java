@@ -1,4 +1,4 @@
-package com.cloud.eureka.client1.controller;
+package com.cloud.eureka.client2.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

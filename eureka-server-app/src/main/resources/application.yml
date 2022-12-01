@@ -4,3 +4,6 @@ eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+    maxThreadsForPeerReplication: 0
+    service-url:
+      defaultZone: http://localhost:8010/eureka/
