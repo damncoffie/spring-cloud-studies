@@ -3,6 +3,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/damncoffie/GitTestt
+          uri: https://github.com/damncoffie/for-tests
 server:
   port: 8081
