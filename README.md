@@ -12,7 +12,15 @@ Project consists of a few modules:
     - each has an GET endpoint which returns a random word
 4. Sentence app (eureka-client-sentence-app)
     - makes call to three clients mentioned above to comprise a sentence
-    - can use DiscoveryClient instance or RestTemplate instance hooked with Ribbon
+    - has 3 controllers:
+        - use DiscoveryClient instance to find a service's URI by client-id and make a call to that URI
+        - use @LoadBalanced-annotated RestTemplate, which is automatically hooked into Ribbon, make a 
+            call to "http://" + serviceIdInEureka
+        - use feign clients (@FeignClient("SERVICE-ID-IN-EUREKA")) to call word clients.
+            calls backed by @HystrixCommand(fallbackMethod = "getFallbackVerb")
+
+
+About technologies:
 
 Eureka:
 - client discovery service
