@@ -27,4 +27,10 @@ Feign:
 - allows you to write calls to rest services with no implementation code
 - alternative to rest template
 - integration with Eureka (can use client-id as a url)
+
+Hystrix:
+- isolates the points of access between the services, stops cascading failures across them and provides the 
+    fallback options.
+- open http://localhost:8020/hystrix. When prompted, 
+    enter http://localhost:8020/actuator/hystrix.stream as the host to monitor.
 </pre>

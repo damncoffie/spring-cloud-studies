@@ -1,9 +1,7 @@
 package com.cloud.sentence.service.impl;
 
-import com.cloud.sentence.clients.AdjectiveClient;
-import com.cloud.sentence.clients.SubjectClient;
-import com.cloud.sentence.clients.VerbClient;
 import com.cloud.sentence.service.SentenceService;
+import com.cloud.sentence.service.WordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,19 +9,13 @@ import org.springframework.stereotype.Service;
 public class SentenceServiceImpl implements SentenceService {
 
     @Autowired
-    private AdjectiveClient adjectiveClient;
-
-    @Autowired
-    private SubjectClient subjectClient;
-
-    @Autowired
-    private VerbClient verbClient;
+    private WordService wordService;
 
     @Override
     public String buildSentence() {
 
-        return adjectiveClient.getWord() + " "
-                + subjectClient.getWord() + " "
-                + verbClient.getWord();
+        return wordService.getAdjective() + " "
+                + wordService.getSubject() + " "
+                + wordService.getVerb();
     }
 }

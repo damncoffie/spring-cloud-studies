@@ -3,3 +3,10 @@ spring:
     name: sentence-app
 server:
   port: 8020
+# Tell Spring Boot Actuator to expose the hystrix.stream endpoint.
+# This is listened to by the Hystrix dashboard for monitoring purposes:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream'
