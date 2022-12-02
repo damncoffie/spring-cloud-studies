@@ -14,9 +14,17 @@ Project consists of a few modules:
     - makes call to three clients mentioned above to comprise a sentence
     - can use DiscoveryClient instance or RestTemplate instance hooked with Ribbon
 
+Eureka:
+- client discovery service
 
 Ribbon:
 - client side load balancer
 - auto integrates with service-discovery (Eureka)
 - built in failure resiliency (Hystrix)
+
+Feign:
+- declarative rest client
+- allows you to write calls to rest services with no implementation code
+- alternative to rest template
+- integration with Eureka (can use client-id as a url)
 </pre>
