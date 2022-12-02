@@ -14,6 +14,7 @@ Project consists of a few modules:
     - makes call to three clients mentioned above to comprise a sentence
     - has 3 controllers:
         - use DiscoveryClient instance to find a service's URI by client-id and make a call to that URI
+            with RestTemplate
         - use @LoadBalanced-annotated RestTemplate, which is automatically hooked into Ribbon, make a 
             call to "http://" + serviceIdInEureka
         - use feign clients (@FeignClient("SERVICE-ID-IN-EUREKA")) to call word clients.
