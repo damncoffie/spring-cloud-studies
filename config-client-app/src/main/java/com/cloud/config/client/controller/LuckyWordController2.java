@@ -1,27 +1,19 @@
 package com.cloud.config.client.controller;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RefreshScope
-public class LuckyWordController {
+@ConfigurationProperties(prefix = "word-config")
+public class LuckyWordController2 {
 
-    @Value("${word-config.lucky-word}")
     private String luckyWord;
-
-    @Value("${word-config.preamble}")
     private String preamble;
 
-    @GetMapping("/lucky-word")
-    public String showLuckyWord() {
-        return "The lucky word is: " + luckyWord;
-    }
-
+    @GetMapping(path = "/lucky-word-2")
     public String getLuckyWord() {
-        return luckyWord;
+        return preamble + " " + luckyWord;
     }
 
     public void setLuckyWord(String luckyWord) {
