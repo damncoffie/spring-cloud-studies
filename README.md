@@ -20,6 +20,20 @@ Project consists of a few modules:
         - use feign clients (@FeignClient("SERVICE-ID-IN-EUREKA")) to call word clients.
             calls backed by @HystrixCommand(fallbackMethod = "getFallbackVerb")
 
+Spring bus update feature in config-server-app and config-client-app:
+    - Client get properties the same way as eureka-clients, but can use spring-bus config update.
+    - The goal is to update config property without restarting a client app.
+    - Server and client both has an actuator and spring-bus dependencies. This dependency is smart enough to be aware on 
+        which side it's being run (client or server).
+    - Client has two controllers:
+        - with @RefreshScope and @Value for props
+	    - with @ConfigurationProperties with prefix
+    - Spring bus uses RabbitMQ (you need to start it beforehand).
+    - Server exposes bus-refresh actuator endpoint by property:
+        management.endpoints.web.exposure.include: health,info,bus-refresh
+    - When property is changed (e.g. on a remote github repo) you can call a config server's actuator endpoint:
+        http://localhost:8081/actuator/bus-refresh
+    - Change will be propagated to a client.
 
 About technologies:
 
