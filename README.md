@@ -56,4 +56,6 @@ Hystrix:
     fallback options.
 - open http://localhost:8020/hystrix. When prompted, 
     enter http://localhost:8020/actuator/hystrix.stream as the host to monitor.
+
+spring-cloud-test-api.json in the project root - for insomnia import
 </pre>
